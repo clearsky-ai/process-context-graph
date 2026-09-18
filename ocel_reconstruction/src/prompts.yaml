@@ -1,0 +1,52 @@
+# Externalized prompts for the OCEL reconstruction sequence predictor.
+# Strings may contain {{placeholder}} tokens filled by src.prompt_store.render.
+# Literal { } (JSON examples) are left as-is.
+#
+# User-prompt shape: unified prefix (catalog) + up to two independent source
+# blocks (mail, OCEL). Each present source is preceded by its own instructions.
+# No source is treated as an authority over another. Graph context belongs to
+# the agentic path, whose prompts live in agent_predictor.py.
+# --- System prompt (unified prefix) ---------------------------------------- #
+
+system: "You are an expert process-mining analyst for a loan-origination process. Reconstruct the ORDERED SEQUENCE of activities that one hidden email reports, using whatever sources follow in the user message (email body, observed OCEL timeline, and/or context-graph spans). A single email may report SEVERAL activities the sender performed, one after another. Copy each event_type verbatim from the catalog. Catalog descriptions define WHAT each activity MEANS - they do NOT define the order for this email. Derive order from the narrative in the sources that are present, never from the order activities happen to be listed in the catalog. ALWAYS pick at least one activity - never return an empty list. Respond with JSON only."
+
+# --- User-prompt pieces --------------------------------------------------- #
+
+cap_block: " Return AT MOST {{n}} {{word}} - never more than {{n}}."
+
+mail_block: |-
+  === EMAIL ===
+  This is the internal status email the employee sent. Reconstruct the activities the sender reports, in the order they narrate them.
+  Sender : {{sender}}
+  Objects: {{objects}}
+  Subject: {{subject}}
+  Body:
+  {{body}}
+
+ocel_block: |-
+  === OCEL CONTEXT (observed case timeline) ===
+  This is the observed case timeline. Lines before >>> THIS hidden email are previous observed events — do not re-report them. Lines after THIS are upcoming observed events — they have not happened yet in this email, do not copy them. Use the timeline only to tell look-alike labels apart.
+  STRICT: the timeline is ONLY a disambiguation aid. NEVER add an activity just because it appears in the timeline. Every activity you output MUST be reported by THIS email's own narrative/spans. Do NOT append an event from the lines after >>> THIS hidden email, even when it sits at the same timestamp as one you are reporting or looks like the obvious "next step" — if THIS email only narrates up to a point, stop there.
+  {{timeline}}
+
+task_single: |-
+  Identify the SINGLE most relevant activity this hidden email reports (exactly one).
+  Respond with JSON only:
+  {"activities": ["<exact event_type>"], "confidence": <number 0-1>, "reasoning": "<one short sentence>"}
+  Copy the event_type verbatim from the catalog above. Return EXACTLY ONE activity - never zero and never more than one.
+
+task_multi: |-
+  Reconstruct the ordered list of activities this hidden email reports, from the sources above, in the order performed.
+  Respond with JSON only:
+  {"activities": ["<exact event_type>", ...], "confidence": <number 0-1>, "reasoning": "<one short sentence>"}
+  Every event_type MUST be copied verbatim from the catalog above. Order the activities to match the NARRATIVE SEQUENCE in the sources that are present, NOT the order they appear in the catalog. Repeat an activity only if it truly happened more than once.
+  You MUST ALWAYS return at least one activity - the list can never be empty.
+
+# --- Full user-prompt skeleton -------------------------------------------- #
+
+main: |-
+  Catalog of possible activities (choose from these; copy verbatim).
+  Each line is "<event_type>: <description>"; the description explains what the activity MEANS and is NOT the order to follow for this email:
+  {{catalog}}
+
+  {{mail_block}}{{ocel_block}}{{task_block}}
