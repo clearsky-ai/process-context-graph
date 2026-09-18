@@ -1,4 +1,4 @@
-# OCEL Reconstruction from a Context Graph
+# Process Context Graph
 
 Two Python stages that answer one question: **given an email that replaced a
 stretch of a process log, can we recover the activities it hid — and does a
@@ -528,3 +528,4 @@ ocel_evaluation/
 The agentic path's prompts live in `agent_predictor.py`, not in `prompts.yaml`;
 `prompts.yaml` covers the single-shot path only. Both are load-bearing for the
 results — treat either as a change that needs a measurement run behind it.
+
