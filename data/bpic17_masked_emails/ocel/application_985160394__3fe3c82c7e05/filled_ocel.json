@@ -1,0 +1,1806 @@
+{
+	"objectTypes": [
+		{
+			"name": "application",
+			"attributes": [
+				{
+					"name": "case:LoanGoal",
+					"type": "string"
+				},
+				{
+					"name": "case:RequestedAmount",
+					"type": "float"
+				},
+				{
+					"name": "case:ApplicationType",
+					"type": "string"
+				},
+				{
+					"name": "MonthlyCost",
+					"type": "float"
+				},
+				{
+					"name": "FirstWithdrawalAmount",
+					"type": "float"
+				},
+				{
+					"name": "OfferedAmount",
+					"type": "float"
+				}
+			]
+		},
+		{
+			"name": "mail",
+			"attributes": [
+				{
+					"name": "case:LoanGoal",
+					"type": "string"
+				},
+				{
+					"name": "case:RequestedAmount",
+					"type": "float"
+				},
+				{
+					"name": "case:ApplicationType",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "offer",
+			"attributes": [
+				{
+					"name": "case:LoanGoal",
+					"type": "string"
+				},
+				{
+					"name": "case:RequestedAmount",
+					"type": "float"
+				},
+				{
+					"name": "case:ApplicationType",
+					"type": "string"
+				},
+				{
+					"name": "MonthlyCost",
+					"type": "float"
+				},
+				{
+					"name": "FirstWithdrawalAmount",
+					"type": "float"
+				},
+				{
+					"name": "OfferedAmount",
+					"type": "float"
+				}
+			]
+		},
+		{
+			"name": "personal loan",
+			"attributes": [
+				{
+					"name": "case:LoanGoal",
+					"type": "string"
+				},
+				{
+					"name": "case:RequestedAmount",
+					"type": "float"
+				},
+				{
+					"name": "case:ApplicationType",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "potential fraud",
+			"attributes": [
+				{
+					"name": "case:LoanGoal",
+					"type": "string"
+				},
+				{
+					"name": "case:RequestedAmount",
+					"type": "float"
+				},
+				{
+					"name": "case:ApplicationType",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "resource",
+			"attributes": [
+				{
+					"name": "case:LoanGoal",
+					"type": "string"
+				},
+				{
+					"name": "case:RequestedAmount",
+					"type": "float"
+				},
+				{
+					"name": "case:ApplicationType",
+					"type": "string"
+				},
+				{
+					"name": "MonthlyCost",
+					"type": "float"
+				},
+				{
+					"name": "FirstWithdrawalAmount",
+					"type": "float"
+				},
+				{
+					"name": "OfferedAmount",
+					"type": "float"
+				}
+			]
+		}
+	],
+	"eventTypes": [
+		{
+			"name": "A_Accepted",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "A_Cancelled",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "A_Complete",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "A_Concept",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "A_Create Application",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "A_Denied",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "A_Incomplete",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "A_Pending",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "A_Submitted",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "A_Validating",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "O_Accepted",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "O_Cancelled",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "O_Create Offer",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				},
+				{
+					"name": "Accepted",
+					"type": "string"
+				},
+				{
+					"name": "Selected",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "O_Created",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "O_Refused",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "O_Returned",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "O_Sent (mail and online)",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "O_Sent (online only)",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "W_Assess potential fraud",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "W_Call after offers",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "W_Call incomplete files",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "W_Complete application",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "W_Handle leads",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "W_Personal Loan collection",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "W_Shortened completion ",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "W_Validate application",
+			"attributes": [
+				{
+					"name": "Action",
+					"type": "string"
+				},
+				{
+					"name": "EventOrigin",
+					"type": "string"
+				},
+				{
+					"name": "EventID",
+					"type": "string"
+				},
+				{
+					"name": "lifecycle:transition",
+					"type": "string"
+				}
+			]
+		},
+		{
+			"name": "internal_email_sent",
+			"attributes": [
+				{
+					"name": "EmailID",
+					"type": "string"
+				},
+				{
+					"name": "Subject",
+					"type": "string"
+				},
+				{
+					"name": "Body",
+					"type": "string"
+				},
+				{
+					"name": "Sender",
+					"type": "string"
+				},
+				{
+					"name": "Recipients",
+					"type": "string"
+				}
+			]
+		}
+	],
+	"objects": [
+		{
+			"id": "natasha_kelley",
+			"type": "resource",
+			"attributes": [
+				{
+					"name": "case:LoanGoal",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "Existing loan takeover"
+				},
+				{
+					"name": "case:RequestedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 7000.0
+				},
+				{
+					"name": "case:ApplicationType",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "New credit"
+				},
+				{
+					"name": "MonthlyCost",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 154.11
+				},
+				{
+					"name": "FirstWithdrawalAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 15000.0
+				},
+				{
+					"name": "OfferedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 15000.0
+				}
+			]
+		},
+		{
+			"id": "danielle_rodriguez",
+			"type": "resource",
+			"attributes": [
+				{
+					"name": "case:LoanGoal",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "Remaining debt home"
+				},
+				{
+					"name": "case:RequestedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 25000.0
+				},
+				{
+					"name": "case:ApplicationType",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "New credit"
+				},
+				{
+					"name": "MonthlyCost",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 151.86
+				},
+				{
+					"name": "FirstWithdrawalAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 13.5
+				},
+				{
+					"name": "OfferedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 20100.0
+				}
+			]
+		},
+		{
+			"id": "Offer_2242030",
+			"type": "offer",
+			"attributes": [
+				{
+					"name": "case:LoanGoal",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "Not speficied"
+				},
+				{
+					"name": "case:RequestedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 42500.0
+				},
+				{
+					"name": "case:ApplicationType",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "New credit"
+				},
+				{
+					"name": "MonthlyCost",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 432.75
+				},
+				{
+					"name": "FirstWithdrawalAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 500.0
+				},
+				{
+					"name": "OfferedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 42500.0
+				}
+			]
+		},
+		{
+			"id": "patrick_anderson",
+			"type": "resource",
+			"attributes": [
+				{
+					"name": "case:LoanGoal",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "Existing loan takeover"
+				},
+				{
+					"name": "case:RequestedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 32000.0
+				},
+				{
+					"name": "case:ApplicationType",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "New credit"
+				},
+				{
+					"name": "MonthlyCost",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 298.46
+				},
+				{
+					"name": "FirstWithdrawalAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 7030.21
+				},
+				{
+					"name": "OfferedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 15600.0
+				}
+			]
+		},
+		{
+			"id": "kelsey_rodriguez",
+			"type": "resource",
+			"attributes": [
+				{
+					"name": "case:LoanGoal",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "Existing loan takeover"
+				},
+				{
+					"name": "case:RequestedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 50000.0
+				},
+				{
+					"name": "case:ApplicationType",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "New credit"
+				},
+				{
+					"name": "MonthlyCost",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 437.8
+				},
+				{
+					"name": "FirstWithdrawalAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 7500.0
+				},
+				{
+					"name": "OfferedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 7500.0
+				}
+			]
+		},
+		{
+			"id": "Application_985160394__3fe3c82c7e05",
+			"type": "application",
+			"attributes": [
+				{
+					"name": "case:LoanGoal",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "Not speficied"
+				},
+				{
+					"name": "case:RequestedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 42500.0
+				},
+				{
+					"name": "case:ApplicationType",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "New credit"
+				},
+				{
+					"name": "MonthlyCost",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 432.75
+				},
+				{
+					"name": "FirstWithdrawalAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 500.0
+				},
+				{
+					"name": "OfferedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 42500.0
+				}
+			]
+		},
+		{
+			"id": "jeffrey_henderson",
+			"type": "resource",
+			"attributes": [
+				{
+					"name": "case:LoanGoal",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "Car"
+				},
+				{
+					"name": "case:RequestedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 15000.0
+				},
+				{
+					"name": "case:ApplicationType",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "New credit"
+				}
+			]
+		},
+		{
+			"id": "Offer_1324456248",
+			"type": "offer",
+			"attributes": [
+				{
+					"name": "case:LoanGoal",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "Not speficied"
+				},
+				{
+					"name": "case:RequestedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 42500.0
+				},
+				{
+					"name": "case:ApplicationType",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "New credit"
+				},
+				{
+					"name": "MonthlyCost",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 432.75
+				},
+				{
+					"name": "FirstWithdrawalAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 500.0
+				},
+				{
+					"name": "OfferedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 42500.0
+				}
+			]
+		},
+		{
+			"id": "marcus_young",
+			"type": "resource",
+			"attributes": [
+				{
+					"name": "case:LoanGoal",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "Home improvement"
+				},
+				{
+					"name": "case:RequestedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 20000.0
+				},
+				{
+					"name": "case:ApplicationType",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "New credit"
+				}
+			]
+		},
+		{
+			"id": "julia_wilson",
+			"type": "resource",
+			"attributes": [
+				{
+					"name": "case:LoanGoal",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "Not speficied"
+				},
+				{
+					"name": "case:RequestedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 7000.0
+				},
+				{
+					"name": "case:ApplicationType",
+					"time": "1970-01-01T00:00:00Z",
+					"value": "New credit"
+				},
+				{
+					"name": "MonthlyCost",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 154.11
+				},
+				{
+					"name": "FirstWithdrawalAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 4884.0
+				},
+				{
+					"name": "OfferedAmount",
+					"time": "1970-01-01T00:00:00Z",
+					"value": 15000.0
+				}
+			]
+		}
+	],
+	"events": [
+		{
+			"id": "1019602",
+			"type": "A_Create Application",
+			"time": "2016-11-13T19:41:52Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "Created"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Application"
+				},
+				{
+					"name": "EventID",
+					"value": "Application_985160394"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "jeffrey_henderson",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1019603",
+			"type": "A_Submitted",
+			"time": "2016-11-13T19:41:53Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "statechange"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Application"
+				},
+				{
+					"name": "EventID",
+					"value": "ApplState_629877235"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "jeffrey_henderson",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1019607",
+			"type": "A_Concept",
+			"time": "2016-11-13T19:42:22Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "statechange"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Application"
+				},
+				{
+					"name": "EventID",
+					"value": "ApplState_549805430"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "jeffrey_henderson",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1028386",
+			"type": "A_Accepted",
+			"time": "2016-11-15T14:32:33Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "statechange"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Application"
+				},
+				{
+					"name": "EventID",
+					"value": "ApplState_483298206"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "natasha_kelley",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1028391",
+			"type": "O_Create Offer",
+			"time": "2016-11-15T14:35:18Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "Created"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Offer"
+				},
+				{
+					"name": "EventID",
+					"value": "Offer_2242030"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				},
+				{
+					"name": "Accepted",
+					"value": "True"
+				},
+				{
+					"name": "Selected",
+					"value": "True"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "Offer_2242030",
+					"qualifier": null
+				},
+				{
+					"objectId": "natasha_kelley",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1028392",
+			"type": "O_Created",
+			"time": "2016-11-15T14:35:19Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "statechange"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Offer"
+				},
+				{
+					"name": "EventID",
+					"value": "OfferState_674207456"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "Offer_2242030",
+					"qualifier": null
+				},
+				{
+					"objectId": "natasha_kelley",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "Application_985160394__3fe3c82c7e05__email",
+			"type": "internal_email_sent",
+			"time": "2016-11-15T14:35:27Z",
+			"attributes": [
+				{
+					"name": "EmailID",
+					"value": "EM04959"
+				},
+				{
+					"name": "Subject",
+					"value": "Update on Application_985160394__3fe3c82c7e05"
+				},
+				{
+					"name": "Body",
+					"value": "Hi manager,\n\nRegarding case Application_985160394__3fe3c82c7e05, the offer was issued by mail and the application moved forward. After that, it is now waiting for the signed offer and supporting documents.\n\nBest,\nNatasha"
+				},
+				{
+					"name": "Sender",
+					"value": "natasha_kelley"
+				},
+				{
+					"name": "Recipients",
+					"value": "manager"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "natasha_kelley",
+					"qualifier": null
+				},
+				{
+					"objectId": "Offer_2242030",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1046899",
+			"type": "A_Validating",
+			"time": "2016-11-21T14:34:08Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "statechange"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Application"
+				},
+				{
+					"name": "EventID",
+					"value": "ApplState_2087688876"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "marcus_young",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1046918",
+			"type": "W_Validate application",
+			"time": "2016-11-21T14:37:57Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "Deleted"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Workflow"
+				},
+				{
+					"name": "EventID",
+					"value": "Workitem_1124573812"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "marcus_young",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1046921",
+			"type": "A_Incomplete",
+			"time": "2016-11-21T14:37:57Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "statechange"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Application"
+				},
+				{
+					"name": "EventID",
+					"value": "ApplState_624012006"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "marcus_young",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1046929",
+			"type": "O_Returned",
+			"time": "2016-11-21T14:39:06Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "statechange"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Offer"
+				},
+				{
+					"name": "EventID",
+					"value": "OfferState_937423447"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "marcus_young",
+					"qualifier": null
+				},
+				{
+					"objectId": "Offer_2242030",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1058982",
+			"type": "W_Call incomplete files",
+			"time": "2016-11-24T09:40:10Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "Deleted"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Workflow"
+				},
+				{
+					"name": "EventID",
+					"value": "Workitem_1146298017"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "julia_wilson",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1058985",
+			"type": "A_Validating",
+			"time": "2016-11-24T09:40:10Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "statechange"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Application"
+				},
+				{
+					"name": "EventID",
+					"value": "ApplState_2110868612"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "julia_wilson",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1062658",
+			"type": "A_Incomplete",
+			"time": "2016-11-25T08:33:26Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "statechange"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Application"
+				},
+				{
+					"name": "EventID",
+					"value": "ApplState_1707971145"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "patrick_anderson",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1065137",
+			"type": "O_Create Offer",
+			"time": "2016-11-25T15:06:04Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "Created"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Offer"
+				},
+				{
+					"name": "EventID",
+					"value": "Offer_1324456248"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				},
+				{
+					"name": "Accepted",
+					"value": "True"
+				},
+				{
+					"name": "Selected",
+					"value": "False"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "danielle_rodriguez",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				},
+				{
+					"objectId": "Offer_1324456248",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1065138",
+			"type": "O_Created",
+			"time": "2016-11-25T15:06:05Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "statechange"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Offer"
+				},
+				{
+					"name": "EventID",
+					"value": "OfferState_1072888375"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "Offer_1324456248",
+					"qualifier": null
+				},
+				{
+					"objectId": "danielle_rodriguez",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1065144",
+			"type": "O_Sent (online only)",
+			"time": "2016-11-25T15:06:16Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "statechange"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Offer"
+				},
+				{
+					"name": "EventID",
+					"value": "OfferState_2139431802"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "Offer_1324456248",
+					"qualifier": null
+				},
+				{
+					"objectId": "danielle_rodriguez",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1136118",
+			"type": "A_Cancelled",
+			"time": "2016-12-16T15:39:47Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "statechange"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Application"
+				},
+				{
+					"name": "EventID",
+					"value": "ApplState_1416065356"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "kelsey_rodriguez",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1136119",
+			"type": "O_Cancelled",
+			"time": "2016-12-16T15:39:47Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "statechange"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Offer"
+				},
+				{
+					"name": "EventID",
+					"value": "OfferState_1907539990"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "Offer_1324456248",
+					"qualifier": null
+				},
+				{
+					"objectId": "kelsey_rodriguez",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1136120",
+			"type": "O_Cancelled",
+			"time": "2016-12-16T15:39:47Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "statechange"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Offer"
+				},
+				{
+					"name": "EventID",
+					"value": "OfferState_1599653452"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "Offer_2242030",
+					"qualifier": null
+				},
+				{
+					"objectId": "kelsey_rodriguez",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		},
+		{
+			"id": "1136121",
+			"type": "W_Call incomplete files",
+			"time": "2016-12-16T15:39:47Z",
+			"attributes": [
+				{
+					"name": "Action",
+					"value": "Deleted"
+				},
+				{
+					"name": "EventOrigin",
+					"value": "Workflow"
+				},
+				{
+					"name": "EventID",
+					"value": "Workitem_1608005781"
+				},
+				{
+					"name": "lifecycle:transition",
+					"value": "complete"
+				}
+			],
+			"relationships": [
+				{
+					"objectId": "kelsey_rodriguez",
+					"qualifier": null
+				},
+				{
+					"objectId": "Application_985160394__3fe3c82c7e05",
+					"qualifier": null
+				}
+			]
+		}
+	]
+}
