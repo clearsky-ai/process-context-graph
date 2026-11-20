@@ -567,13 +567,8 @@ application's observed events plus the email event. The email event carries
 `EmailID`, `Subject`, `Body`, `Sender` and `Recipients`, and links to the
 application, the people involved, and the related offers.
 
-The ground truth has been removed from these files. They contain no
-`true_members` or `original_event_ids`, no masked event, and no `mail` object
-that only a masked event created (such an object reveals a masked
-`O_Sent (mail and online)`).
-
-**`instances.jsonl`** — one row per instance, holding only what the OCEL files
-do not:
+**`instances.jsonl`** — one row per instance, with its pattern and ground
+truth:
 
 | Field | Meaning |
 |---|---|
@@ -587,8 +582,8 @@ do not:
 
 ### Relation to the pipeline input
 
-`ocel_reconstruction` reads a fuller `generated.jsonl` (§3), whose `email` and
-`observed_timeline` fields are omitted here because both are contained in
-`filled_ocel.json`: the email is the `internal_email_sent` event, and the
-observed timeline is the remaining events in time order.
+`ocel_reconstruction` reads a `generated.jsonl` (§3) whose `email` and
+`observed_timeline` fields come from `filled_ocel.json`: the email is the
+`internal_email_sent` event, and the observed timeline is the other events in
+time order.
 
