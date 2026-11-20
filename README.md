@@ -8,6 +8,9 @@ context graph help?**
   ordered list of activities that email reports.
 - `ocel_evaluation/` — *score*. Compare each prediction against the ground
   truth and emit the metrics.
+- `data/bpic17_masked_emails/` — the evaluation corpus: 5,000 masked
+  applications from the BPI Challenge 2017 log, each with its generated email
+  (see [§8 Dataset](#8-dataset)).
 
 They are a pipeline: reconstruction writes `predicted.jsonl`, evaluation reads
 it. Nothing else is shared between them, and evaluation touches no model, no
@@ -523,9 +526,69 @@ ocel_evaluation/
   src/
     experiment.py           scoring, aggregation, summary.json / summary.md
     metrics.py              all metric definitions (pure stdlib)
+
+data/bpic17_masked_emails/
+  instances.jsonl           one row per instance: pattern, size n, ground truth
+  ocel/<graph_key>/
+    filled_ocel.json        the masked application as OCEL 2.0, with its email
 ```
 
 The agentic path's prompts live in `agent_predictor.py`, not in `prompts.yaml`;
 `prompts.yaml` covers the single-shot path only. Both are load-bearing for the
 results — treat either as a change that needs a measurement run behind it.
+
+---
+
+## 8. Dataset
+
+`data/bpic17_masked_emails/` holds the 5,000 instances used in the paper's
+evaluation.
+
+### How it was built
+
+The source is the BPI Challenge 2017 loan-application log (van Dongen, 2017,
+[doi:10.4121/uuid:5f3067df-f10b-45da-b98b-86ae4c7a310b](https://doi.org/10.4121/uuid:5f3067df-f10b-45da-b98b-86ae4c7a310b)),
+converted to OCEL 2.0 with the method of Rebmann et al. (BPM 2022). Only
+`lifecycle=complete` events are kept, and `User_*` resource identifiers are
+replaced by reproducible pseudonyms (e.g. `amanda_fernandez`).
+
+From the application traces, all contiguous activity patterns of length
+n = 1–5 are mined, and the 20 most frequent per n are kept (100 patterns).
+Each pattern gets 50 traces, and no trace is used twice, which gives 5,000
+instances: 1,000 per n, each from a distinct application. In each instance the
+n events of the pattern are masked and replaced by one `internal_email_sent`
+event. An LLM wrote the email from the masked events and their direct
+neighbours. The email generator is not part of this repository.
+
+### Files
+
+**`ocel/<graph_key>/filled_ocel.json`** — one OCEL 2.0 log per instance: the
+application's observed events plus the email event. The email event carries
+`EmailID`, `Subject`, `Body`, `Sender` and `Recipients`, and links to the
+application, the people involved, and the related offers.
+
+The ground truth has been removed from these files. They contain no
+`true_members` or `original_event_ids`, no masked event, and no `mail` object
+that only a masked event created (such an object reveals a masked
+`O_Sent (mail and online)`).
+
+**`instances.jsonl`** — one row per instance, holding only what the OCEL files
+do not:
+
+| Field | Meaning |
+|---|---|
+| `email_uid` | Email id; equals `EmailID` on the email event |
+| `graph_key` | Folder name under `ocel/` |
+| `gram_size` | n, the number of masked events |
+| `unit_id` | The masked pattern, e.g. `2g::A_Complete -> A_Validating` |
+| `true_members` | **Ground truth**: the masked activities, in order |
+| `original_event_ids` | Event ids of the masked events in the source log |
+| `target_indices` | Positions of the masked events in the original trace |
+
+### Relation to the pipeline input
+
+`ocel_reconstruction` reads a fuller `generated.jsonl` (§3), whose `email` and
+`observed_timeline` fields are omitted here because both are contained in
+`filled_ocel.json`: the email is the `internal_email_sent` event, and the
+observed timeline is the remaining events in time order.
 
